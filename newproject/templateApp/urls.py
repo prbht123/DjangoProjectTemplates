@@ -1,3 +1,7 @@
 from django.urls import path
+from templateApp import views
 
-urlpatterns = []
+urlpatterns = [
+		path('service/', views.service),
+		
+]
