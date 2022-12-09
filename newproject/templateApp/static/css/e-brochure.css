@@ -1,12 +1,19 @@
+body{
+  font-family:'Montserrat', sans-serif;
+}
 .one{
   position:relative;
   top:23rem;
 }
-
-.two{
-  position:relative;
-  top:7rem;
-}
 .icon{
   -webkit-text-stroke: 0.9rem #0dcaf0;
+}
+.container-fluid{
+  background-image: url('../../static/image/brochure-16.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height:100%;
+  opacity: 0.8;
 }
