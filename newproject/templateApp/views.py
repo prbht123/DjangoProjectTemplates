@@ -24,3 +24,7 @@ def home(request):
 	context = {}
 	return render(request, 'home.html', context)
 
+def create_webpage(request):
+	context = {}
+	return render(request, 'create_webpage.html', context)
+

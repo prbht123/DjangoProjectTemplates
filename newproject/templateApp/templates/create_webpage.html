@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Career page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/create_webpage.css' %}">
+    </head>
+        <body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center p-5">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img src="{% static 'image/webpage_create.avif' %}" class="w-100">
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="border border-light p-5 bg-light">
+                    <h4 class="fw-bold text-center">Create New Webpage</h4>
+                    <form method='post' enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{create_webpage_form.media}}
+                        <h6 class="fw-bold mt-3">TiTle: {{create_webpage_form.title}}</h6>
+                        <h6 class="fw-bold mt-2">Content: {{create_webpage_form.content}}</h6>
+                        <h6 class="fw-bold mt-2">Cover image: {{create_webpage_form.cover_image}}</h6>
+                        <h6 class="fw-bold mt-2">Template name: {{create_webpage_form.template_name}}</h6>
+                        <div class="text-center">
+                        <button class="btn btn-dark mt-2" type="submit">Submit</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        </body>
+        </html>

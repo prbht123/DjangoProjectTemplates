@@ -8,5 +8,6 @@ urlpatterns = [
 		path('error/', views.error),
 		path('default/', views.default),
 		path('', views.home),
+		path('create_webpage/', views.create_webpage),
 		
 ]
