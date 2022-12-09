@@ -1,0 +1,12 @@
+.one{
+  position:relative;
+  top:23rem;
+}
+
+.two{
+  position:relative;
+  top:7rem;
+}
+.icon{
+  -webkit-text-stroke: 0.9rem #0dcaf0;
+}
