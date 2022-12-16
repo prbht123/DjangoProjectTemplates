@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Profile list</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+	<div class="row d-flex align-items-center justify-content-center my-5">
+		<div class="col-sm-5">
+			
+{% for profile in profiles %}
+<div class="card mt-3 p-5 text-center">
+<p>Username: {{profile.user.username}}</p>
+<img src="{% if profile.profile_image %}{{profile.profile_image.url}}{% endif %}">
+<p>Gender: {{profile.gender}}</p>
+<p>Address: {{profile.address}}</p>
+<p>DOB: {{profile.dob}}</p>
+<a href="{% url 'profileApp:edit_profile' id=profile.id %}" class="btn btn-primary mt-4">Edit profile </a>
+</div>
+{% endfor %}
+</div>
+</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
