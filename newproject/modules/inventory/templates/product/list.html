@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Product list</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+	</head>
+	<body>
+		<div class="row d-flex align-items-center justify-content-center m-5">
+			<h2 class="text-center fw-bold">Product List</h2>
+			{% for product in product_list %}
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+				<div class="card border border-mute p-5 text-center mt-4">
+					<img src="{% if product.image %}{{product.image.url}}{% endif %}">
+					<h2 class="mt-4">{{product.name}}</h2>
+					<h5>Category: {{product.category}}</h5>
+					<h5>Company: {{product.company}}</h5>
+					<h5>Price: {{product.price}}</h5>
+					<h5>Manufacturing date: {{product.manufacturing_date}}</h5>
+					<h5>Expiry date: {{product.expiry_date}}</h5>
+					<h5>Quantity: {{product.quantity}}</h5>
+					<h5>Description: {{product.description}}</h5>
+					<h5>Iso Verification Status: {{product.iso_verification}}</h5>
+					<h5>Tags: {% for tag in product.tags.all %}{{tag.name}}{% endfor %}</h5>
+					<a href="{% url 'inventory:product_detail' pk=product.id %}" class="btn btn-primary mt-3">View details</a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
+		
