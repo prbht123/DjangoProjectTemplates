@@ -1,0 +1,18 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+.card-img{
+	height: 250px;
+}
+.btn{
+	font-size: 10px;
+	background-color: #CCCCFF;
+	width: 72px;
+}
+hr{
+	height: 2px;
+	background-color: grey;
+}
+.emi{
+	color: #FF5F1F;
+}
