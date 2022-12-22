@@ -3,5 +3,6 @@ from templateApp import views
 
 urlpatterns = [
 		path('service/', views.service),
+		path('vehicle_details/',views.vehicleDetails),
 		
 ]
