@@ -1,0 +1,14 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+.image{
+	height: 400px;
+}
+.btn{
+	width: 180px;
+	height: 40px;
+}
+hr{
+	height: 2px;
+	background-color: black;
+}
