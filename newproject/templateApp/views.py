@@ -4,3 +4,7 @@ from django.shortcuts import render
 def service(request):
 	context = {'name':'Piu', 'company':'Webkrone'}
 	return render(request, 'service_template.html', context)
+
+def vehicleDetails(request):
+	context = {}
+	return render(request, 'vehicle_details.html', context)

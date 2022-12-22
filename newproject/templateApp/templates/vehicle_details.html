@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Vehicle details</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/vehicle_details.css' %}">
+	</head>
+	<body>
+		<div class="container my-5">
+			<h3 class="text-uppercase fw-bold">Vehicle name</h3>			
+			<img src="{% static 'image/car-1.jpg' %}" class="w-100 mt-3 shadow">
+			<h4 class="mt-5 text-uppercase fw-bold">Vehicle details</h4>
+			<hr class="rounded-pill ruler">
+			<div class="row d-flex justify-content-center">
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<div class="row bg-white text-center shadow">
+						<span class="m-2"><a href="#overview" class="btn button mx-1" id="overview">Overview</a>
+						<a href="#vehicleType" class="btn button mx-1" id="vehicleType">Vehicle type</a>
+						<a href="#vehicleDocuments" class="btn button mx-1" id="vehicleDocuments">Vehicle documents</a></span>
+					</div>
+					<a name="overview"></a>
+					<div class="row mt-4 bg-white d-flex justify-content-center py-4 shadow">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Name</span><span class="float-end">ABC</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Registration no.</span><span class="float-end">WB-06-x-xxxx</span></h6>		
+							<hr class="my-3">						
+							<h6><i class="fa fa-car px-2"></i><span>Manufacturing date</span><span class="float-end">Sep 2014</span></h6>			
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Owner</span><span class="float-end">1st owner</span></h6>					
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Model name</span><span class="float-end">abc</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Registration date</span><span class="float-end">Sep 2014</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Purchased date</span><span class="float-end">Sep 2020</span></h6>			
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Vehicle type</span><span class="float-end">abc</span></h6>
+							</div>
+						</div>
+						<a name="vehicleType"></a>
+						<div class="row mt-4 bg-white d-flex justify-content-center py-4 shadow">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Title</span><span class="float-end">ABC</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Wheel base</span><span class="float-end">WB-06-x-xxxx</span></h6>		
+							<hr class="my-3">						
+							<h6><i class="fa fa-car px-2"></i><span>Color</span><span class="float-end">Sep 2014</span></h6>			
+							</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Capacity</span><span class="float-end">abc</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Company name</span><span class="float-end">ABC</span></h6>
+							</div>
+						</div>
+						<a name="vehicleDocuments"></a>
+							<div class="row mt-4 bg-white d-flex justify-content-center py-4 shadow">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Title</span><span class="float-end">ABC</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Vehicle</span><span class="float-end">XYZ</span></h6>		
+							<hr class="my-3">						
+							<h6><i class="fa fa-car px-2"></i><span>Servicing date</span><span class="float-end">Sep 2014</span></h6>			
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Servicing km</span><span class="float-end">1st owner</span></h6>					
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Insurance upto</span><span class="float-end">20 Jan 2024</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Servicing upto</span><span class="float-end">Sep 2014</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Pollution certificate date</span><span class="float-end">Sep 2020</span></h6>			
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Pollution control valid</span><span class="float-end">3 June 2021</span></h6>
+							</div>
+				</div>
+			</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 shadow">
+					<div id="carouselExampleIndicators" class="carousel slide bg-white" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'image/car-1.jpg' %}" class="d-block w-100 py-4">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/car-1.jpg' %}" class="d-block w-100 py-4">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/car-1.jpg' %}" class="d-block w-100 py-4">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="bg-white text-center">
+<button type="button" class="btn btn-outline-primary mt-5 mb-4 p-2 text-uppercase fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  View all specs and features
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down"> 
+    <div class="modal-content">
+      <div class="modal-header shadow">
+        <h5 class="modal-title text-uppercase fw-bold" id="exampleModalLabel">Specification and features</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-5">
+        <div class="row d-flex justify-content-center">
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white">
+        		<div class="text-end"><h5 class="fw-bold"><a href="" class="link-dark">Specification</a></h5></div>
+        			</div>
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white">
+        		<div class="text-start"><h5 class="fw-bold"><a href="" class="link-dark">Features</a></h5></div>
+        	</div>
+        	<div class="bg-light row text-start mt-4"><h6 class="fw-bold p-3">Body</h6></div>
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white mt-4">
+        		<h6><span>Bootspace(litres)<span class="float-end text-end">285</span></h6>
+        		<hr>
+        		<h6><span>Kerb weight(kg)</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Seating capacity</span><span class="float-end text-end">5</span></h6>
+        		<hr>
+        		<h6><span>Length(mm)</span><span class="float-end text-end">3985</span></h6>
+        		<hr>
+        		<h6><span>Height(mm)</span><span class="float-end text-end">1505</span></h6>
+        			</div>
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white mt-4">
+        		<h6><span>Width(mm)</span><span class="float-end text-end">1734</span></h6>
+        		<hr>
+        		<h6><span>Ground clearance(mm)</span><span class="float-end text-end">170</span></h6>
+        		<hr>
+        		<h6><span>No of doors</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>No of seating rows</span><span class="float-end text-end">2</span></h6>
+        		<hr>
+        		<h6><span>Wheelbase(mm)</span><span class="float-end text-end">2570</span></h6>
+        	</div>
+        	<div class="bg-light row text-start mt-4"><h6 class="fw-bold p-3">Engine</h6></div>
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white mt-4">
+        		<h6><span>Engine start-stop</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Fuel system</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Max torque (rpm)</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Dual clutch</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Engine type</span><span class="float-end text-end">1.2 Kappa petrol with dual VTVT, 16 Valves, 4 Cylinder</span></h6>
+        		<hr>
+        		<h6><span>Turbocharge type</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Transmission type</span><span class="float-end text-end">MANUAL</span></h6>
+        		<hr>
+        		<h6><span>Compression ratio</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Max torque (Nm)</span><span class="float-end text-end">115</span></h6>
+        		<hr>
+        		<h6><span>Bore x Stroke (mm)</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Max Engine Performance</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Sport mode</span><span class="float-end text-end">N/A</span></h6>
+        	</div>
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white mt-4">
+        		<h6><span>Driving modes</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Max power (bhp)</span><span class="float-end text-end">82</span></h6>
+        		<hr>
+        		<h6><span>Valves per cylinder</span><span class="float-end text-end">4</span></h6>
+        		<hr>
+        		<h6><span>Emission Standard</span><span class="float-end text-end">DOHC</span></h6>
+        		<hr>
+        		<h6><span>Turbocharger/supercharger</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Manual shifting for automatic</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>No of gears</span><span class="float-end text-end">5</span></h6>
+        		<hr>
+        		<h6><span>Max power (rpm)</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Displacement (cc)</span><span class="float-end text-end">1197</span></h6>
+        		<hr>
+        		<h6><span>Drivetrain</span><span class="float-end text-end">FWD</span></h6>
+        		<hr>
+        		<h6><span>Max Motor Performance</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Cylinders</span><span class="float-end text-end">4 , Inline</span></h6>
+        	</div>
+        	<div class="bg-light row text-start mt-4"><h6 class="fw-bold p-3">Fuel</h6></div>
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white mt-4">
+        		<h6><span>Fuel tank capacity (litres)</span><span class="float-end text-end">45</span></h6>
+        		<hr>
+        		<h6><span>Electric Motor</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Battery</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Driving Range (Km)</span><span class="float-end text-end">N/A</span></h6>
+        	</div>
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white mt-4">
+        		<h6><span>Alternate fuel type</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Battery Charging</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Mileage (kmpl)</span><span class="float-end text-end">18.6</span></h6>
+        		<hr>
+        		<h6><span>Fuel type</span><span class="float-end text-end">Petrol</span></h6>
+        	</div>
+        	<div class="bg-light row text-start mt-4"><h6 class="fw-bold p-3">Drivetrain</h6></div>
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white mt-4">
+        		<h6><span>Turning radius (m)</span><span class="float-end text-end">4.7</span></h6>
+        		<hr>
+        		<h6><span>Wheels</span><span class="float-end text-end">Steel Rims</span></h6>
+        		<hr>
+        		<h6><span>Suspension front</span><span class="float-end text-end">McPherson strut with coil spring</span></h6>
+        		<hr>
+        		<h6><span>Spare wheel</span><span class="float-end text-end">N/A</span></h6>
+        		<hr>
+        		<h6><span>Suspension rear</span><span class="float-end text-end">Coupled torsion beam axle with coil spring</span></h6>
+        	</div>
+        	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white mt-4">
+        		<h6><span>Steering type</span><span class="float-end text-end">Power assisted (Electric)</span></h6>
+        		<hr>
+        		<h6><span>Brake type front</span><span class="float-end text-end">Disc</span></h6>
+        		<hr>
+        		<h6><span>Brake type rear</span><span class="float-end text-end">Drum</span></h6>
+        		<hr>
+        		<h6><span>Tyres rear</span><span class="float-end text-end">185 / 70 R14</span></h6>
+        		<hr>
+        		<h6><span>Tyres front</span><span class="float-end text-end">185 / 70 R14</span></h6>
+        	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+				</div>
+			</div>
+		</div>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
