@@ -4,7 +4,7 @@ body{
 .card-img{
 	height: 250px;
 }
-.btn{
+.button{
 	font-size: 10px;
 	background-color: #CCCCFF;
 	width: 72px;
@@ -13,6 +13,11 @@ hr{
 	height: 2px;
 	background-color: grey;
 }
-.emi{
+.name{
 	color: #FF5F1F;
+}
+.button1{
+	width: 200px;
+	background-color: #FF5F1F;
+	color: white;
 }
