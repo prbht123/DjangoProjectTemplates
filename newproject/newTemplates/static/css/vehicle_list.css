@@ -20,6 +20,7 @@ hr{
 }	    
 .button1{
 	width: 120px;
+	font-size:10px;
 	background-color: #FF5F1F;
 	color: white;
 }
@@ -48,6 +49,7 @@ p{
 }
 .button1{
 	width: 140px;
+	font-size: 10px;
 	background-color: #FF5F1F;
 	color: white;
 }
@@ -75,7 +77,8 @@ p{
 	width: 65px;
 }
 .button1{
-	width: 160px;
+	width: 140px;
+	font-size: 12px;
 	background-color: #FF5F1F;
 	color: white;
 }
@@ -103,7 +106,8 @@ p{
 	width: 70px;
 }
 .button1{
-	width: 180px;
+	width: 190px;
+	font-size: 14px;
 	background-color: #FF5F1F;
 	color: white;
 }
@@ -132,6 +136,7 @@ p{
 }
 .button1{
 	width: 200px;
+	font-size: 15px;
 	background-color: #FF5F1F;
 	color: white;
 }
@@ -160,6 +165,7 @@ p{
 }
 .button1{
 	width: 200px;
+	font-size: 16px;
 	background-color: #FF5F1F;
 	color: white;
 }
