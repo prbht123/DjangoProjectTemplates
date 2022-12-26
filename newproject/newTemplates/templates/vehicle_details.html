@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Vehicle details</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/vehicle_details.css' %}">
+	</head>
+	<body>
+		<div class="container my-5">
+			<h3 class="text-uppercase fw-bold">Vehicle name</h3>
+			<img src="{% static 'image/car-1.jpg' %}" class="w-100 mt-3 shadow">
+			<h4 class="mt-5 text-uppercase fw-bold">Vehicle details</h4>
+			<hr class="rounded-pill ruler">
+			<div class="row d-flex justify-content-center">
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<div class="row bg-white text-center shadow">
+						<div class="filter p-2">
+						<button class="filter-btn button bg-white border-0 active" data-target="#block-1" id="button1">Overview</button>
+						<button  class="filter-btn button bg-white border-0" data-target="#block-2" id="button2">Vehicle type</button>
+						<button class="filter-btn button bg-white border-0" data-target="#block-3" id="button3">Vehicle documents</button>
+					</div>
+					</div>
+					<div class="block">
+							<div class="block-card active" id="block-1">
+					<div class="row mt-4 bg-white d-flex justify-content-center py-4 shadow">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Name</span><span class="float-end">ABC</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Registration no.</span><span class="float-end">WB-06-x-xxxx</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Manufacturing date</span><span class="float-end">Sep 2014</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Owner</span><span class="float-end">1st owner</span></h6>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Model name</span><span class="float-end">abc</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Registration date</span><span class="float-end">Sep 2014</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Purchased date</span><span class="float-end">Sep 2020</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Vehicle type</span><span class="float-end">abc</span></h6>
+				</div>
+			</div>
+		</div>
+					<div class="block-card" id="block-2" style="display:none;">
+						<div class="row mt-4 bg-white d-flex justify-content-center py-4 shadow">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Title</span><span class="float-end">ABC</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Wheel base</span><span class="float-end">WB-06-x-xxxx</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Color</span><span class="float-end">Sep 2014</span></h6>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Capacity</span><span class="float-end">abc</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Company name</span><span class="float-end">ABC</span></h6>
+				</div>
+			</div>
+		</div>
+					<div class="block-card" id="block-3" style="display:none;">
+						<div class="row mt-4 bg-white d-flex justify-content-center py-4 shadow">
+							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Title</span><span class="float-end">ABC</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Vehicle</span><span class="float-end">XYZ</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Servicing date</span><span class="float-end">Sep 2014</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Servicing km</span><span class="float-end">1st owner</span></h6>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h6><i class="fa fa-car px-2"></i><span>Insurance upto</span><span class="float-end">20 Jan 2024</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Servicing upto</span><span class="float-end">Sep 2014</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Pollution certificate date</span><span class="float-end">Sep 2020</span></h6>
+							<hr class="my-3">
+							<h6><i class="fa fa-car px-2"></i><span>Pollution control valid</span><span class="float-end">3 June 2021</span></h6>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 shadow">
+					<div id="carouselExampleIndicators" class="carousel slide bg-white" data-bs-ride="true">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="{% static 'image/car-1.jpg' %}" class="d-block w-100 py-4">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'image/car-1.jpg' %}" class="d-block w-100 py-4">
+							</div>
+							<div class="carousel-item">
+								<img src="{% static 'image/car-1.jpg' %}" class="d-block w-100 py-4">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+					<div class="bg-white text-center">
+							<a href="" class="btn btn-primary fw-bold mt-1 mb-2">Update</a>
+							<a href="" class="btn btn-primary fw-bold mt-1 mb-2">Delete</a>
+						</div>
+				</div>
+			</div>
+		</div>
+		<script src="{% static 'js/vehicle_details.js' %}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</body>
+</html>

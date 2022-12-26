@@ -1,0 +1,17 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+	background-color: #FAF9F6;
+}
+.ruler{
+	width: 80px;
+	height: 8px;
+	background-color: #FF5F1F;
+}
+.button{
+	width:225px;
+}
+
+.block-card.active{
+	display: block;
+}
+

@@ -5,6 +5,10 @@ def vehicleList(request):
 	context = {}
 	return render(request, 'vehicle_list.html', context)
 
+def vehicleDetails(request):
+	context = {}
+	return render(request, 'vehicle_details.html', context)
+
 def productList(request):
 	context = {}
 	return render(request, 'product_list.html', context)
@@ -12,4 +16,4 @@ def productList(request):
 def productDetails(request):
 	context = {}
 	return render(request, 'product_details.html', context)
-	
+
