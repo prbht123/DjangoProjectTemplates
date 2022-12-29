@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Transporter details</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/transporter_details.css' %}">
+	</head>
+	<body>
+		<div class="row bg-success">
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			<h3 class="text-white fw-bold p-3">Transporter company name</h3></div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 p-3 text-end">
+        	<span class="text-white"><i class="fa fw fa-star p-1"></i><i class="fa fw fa-star"></i><i class="fa fw fa-star p-1"></i><i class="fa fw fa-star"></i></span><i class="fa fa-star-o p-1 text-white"></i>
+        	<a href="" class="btn btn-light text-success">4</a>
+			</div>
+		</div>
+		<div class="container">	
+		<div id="image-1">		
+			<img src="{% static 'image/transporter-7.jpg' %}" class="w-100">
+		</div>
+		<div id="image-2" style="display:none;">		
+			<img src="{% static 'image/transporter-1.jpg' %}" class="w-100">
+		</div>
+		<div id="image-3" style="display:none;">		
+			<img src="{% static 'image/transporter-3.jpg' %}" class="w-100">
+		</div>
+		<div id="image-4" style="display:none;">		
+			<img src="{% static 'image/transporter-2.avif' %}" class="w-100">
+		</div>
+		<div id="image-5" style="display:none;">		
+			<img src="{% static 'image/transporter-5.avif' %}" class="w-100">
+		</div>
+			<div class="row d-flex justify-content-center mt-5">
+				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 p-5">
+					<h4 class="fw-bold text-success">Transporter:</h4>
+					<h5 class="fw-bold">Mr. Anirban Chatterjee</h5>
+					<hr>
+					<h5 class="fw-bold text-success mt-4">Contact details</h5>
+					<h6 class="fw-bold">Phone no.:
+					8999392308</h6>
+					<hr>
+					<h6 class="fw-bold text-success">Address</h6>
+					<h6 class="fw-bold">D block, Abc road, Kolkata-700001</h6>
+					<hr>
+					<div class="dropdown">
+  <button class="btn btn-success dropdown-toggle fw-bold mt-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+   Available Vehicles
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#" id="v-1">Vehicle 1</a></li>
+    <li class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#" id="v-2">Vehicle 2</a></li>
+    <li class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#" id="v-3">Vehicle 3</a></li>
+    <li class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#" id="v-4">Vehicle 4</a></li>
+    <li class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#" id="v-5">Vehicle 5</a></li>
+  </ul>
+</div>
+<hr>
+<h6 class="text-success fw-bold mt-5">Description</h6>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Quis aspernatur natus tenetur qui, nihil officiis recusandae doloribus ex nemo.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, temporibus.</p>
+<hr>
+				</div>
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+					<div class="vr bg-success mt-5"></div>
+				</div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 p-5">
+					<h4 class="fw-bold text-success text-end">Vehicle Name</h4>
+					<h5 class="fw-bold text-end" id="name-1">Maruti Suzuki</h5>
+					<h5 class="fw-bold text-end" id="name-2" style="display:none;">mahindra</h5>
+					<h5 class="fw-bold text-end" id="name-3" style="display:none;">Tata</h5>
+					<h5 class="fw-bold text-end" id="name-4" style="display:none;">Hundai</h5>
+					<h5 class="fw-bold text-end" id="name-5" style="display:none;">BMW</h5>
+					<hr>
+					<h5 class="fw-bold text-success text-end mt-3">Vehicle type</h5>
+					<h6 class="fw-bold text-end">Truck</h6>
+					<hr>
+					<h6 class="fw-bold text-success text-end mt-3">Registration no.</h6>
+					<h6 class="fw-bold text-end">WB-xxxx-xxx-01</h6>
+					<hr>
+					<h5 class="fw-bold text-success text-end mt-3">Price per Kilometer</h5>
+					<h6 class="fw-bold text-end" id="p-1">&#x20b9;18.00</h6>
+					<h6 class="fw-bold text-end" id="p-2" style="display:none;">&#x20b9;20.00</h6>
+					<h6 class="fw-bold text-end" id="p-3" style="display:none;">&#x20b9;22.00</h6>
+					<h6 class="fw-bold text-end" id="p-4" style="display:none;">&#x20b9;25.00</h6>
+					<h6 class="fw-bold text-end" id="p-5" style="display:none;">&#x20b9;30.00</h6>
+					<hr>
+					<div class="text-end mt-5">
+					<button type="button" class="btn btn-success fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Drivers Available
+</button>
+<hr>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Driver details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      	<div class="container">
+        <div class="row d-flex justify-content-center border border-dark my-5">
+        	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 p-4">
+        	<img src="{% static 'image/driver-1.jpeg' %}" class="w-100">
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 p-4">
+        	<h5 class="fw-bold text-success">Driver Name:</h5>
+        	<h6 class="fw-bold">Abcd Xyz</h6>
+        	<h6 class="fw-bold text-success mt-3">Rating:</h6>
+        	<a href="" class="btn btn-success">4</a>
+        	<span class="text-success"><i class="fa fw fa-star p-1"></i><i class="fa fw fa-star"></i><i class="fa fw fa-star p-1"></i><i class="fa fw fa-star"></i></span><i class="fa fa-star-o p-1"></i>
+        	<h6 class="fw-bold text-success mt-3">Contact no:</h6>
+        	<h6 class="fw-bold">4783927898</h6>
+        	<h6 class="fw-bold text-success mt-3">Experience:</h6>
+        	<h6 class="fw-bold">4 years</h6>
+        	</div>
+        	<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 p-4">
+        		<h6 class="fw-bold text-success">Address</h6>
+        		<h6 class="fw-bold">abc, xyz, Kolkata-700012</h6>
+        	<h6 class="text-success fw-bold">Description:</h6>
+        	<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Placeat maiores, adipisci exercitationem, nostrum, minima omnis deserunt ex tempore minus asperiores hic debitis, quo consequatur nihil?</p>
+        </div>
+        </div>
+          <div class="row d-flex justify-content-center border border-dark my-5">
+        	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 p-4">
+        	<img src="{% static 'image/driver-1.jpeg' %}" class="w-100">
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 p-4">
+        	<h5 class="fw-bold text-success">Driver Name:</h5>
+        	<h6 class="fw-bold">Abcd Xyz</h6>
+        	<h6 class="fw-bold text-success mt-3">Rating:</h6>
+        	<a href="" class="btn btn-success">4</a>
+        	<span class="text-success"><i class="fa fw fa-star p-1"></i><i class="fa fw fa-star"></i><i class="fa fw fa-star p-1"></i><i class="fa fw fa-star"></i></span><i class="fa fa-star-o p-1"></i>
+        	<h6 class="fw-bold text-success mt-3">Contact no:</h6>
+        	<h6 class="fw-bold">4783927898</h6>
+        	<h6 class="fw-bold text-success mt-3">Experience:</h6>
+        	<h6 class="fw-bold">4 years</h6>
+        	</div>
+        	<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 p-4">
+        		<h6 class="fw-bold text-success">Address</h6>
+        		<h6 class="fw-bold">abc, xyz, Kolkata-700012</h6>
+        	<h6 class="text-success fw-bold">Description:</h6>
+        	<p >Lorem ipsum dolor sit amet consectetur adipisicing, elit. Placeat maiores, adipisci exercitationem, nostrum, minima omnis deserunt ex tempore minus asperiores hic debitis, quo consequatur nihil?</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+				</div>
+			</div>
+</div>
+<script src="{% static 'js/transporter_details.js' %}"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
