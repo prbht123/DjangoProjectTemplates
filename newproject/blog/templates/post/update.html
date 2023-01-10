@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{{post.post_category}}
+{% for tag in post.tags.all %}{{tag.title}}{% endfor %}
+	<div class="row d-flex justify-content-center align-items-center my-5">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<form method="post" novalidate enctype="multipart/form-data">
+				{% csrf_token %}
+				<p> Title:{{form.title}}</p>
+				{{form.featured_image}}
+				<p>Content:{{form.content}}</p>
+					<div class="container border border-secondary my-3">
+					<p>Category:</p>
+					<p>If you want to choose from existing categories then choose one from below:</p>
+				{% for category in categories %}				
+				{% if category == post.post_category %}
+				<input type="radio" name="category" checked="true" value="{{category}}" class="existingCategory">
+				<label>{{category}}</label>
+				{% else %}
+				<input type="radio" name="category" value="{{category}}" class="existingCategory">
+				<label>{{category}}</label>
+				{% endif %}
+				<br>
+				{% endfor %}
+				<div id="newCategory" class="my-2">
+					<p class="my-2">Else you can enter a new category:</p>
+				<input type="text" name="category1">
+			</div>
+		</div>
+		<div class="container border border-secondary my-2">
+					<p>Tags:</p>
+					<p>If you want to select from existing tags then select from below:</p>
+					{% if tags %}
+						{% for tag in tags %}
+						{% if tag in post.tags.all %}
+							<input type="checkbox" value="{{tag.title}}" class="checkedvalue" checked="true">{{tag.title}}
+							<br>
+							{% else %}
+							<input type="checkbox" value="{{tag.title}}" class="checkedvalue">{{tag.title}}
+							<br>
+							{% endif %}
+						{% endfor %}
+						{% endif %}
+						<input type="text" name="tag_value" id="allcheckedvalues" class="my-2" value="{% for tag in post.tags.all %}{{tag.title}},{% endfor %}">
+					<br>
+					<p>Else you can enter new tag also using 'comma' and end with a 'comma'..</p>
+				</div>
+				<input type="submit" name="submit" value="submit">
+				<a href="{% url 'blog:post_detail' pk=post.id %}" class="btn btn-success">Back</a>
+			</form>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('.checkedvalue').click(function(){
+			var txt = "";
+			$('.checkedvalue:checked').each(function(){
+				txt += $(this).val()+","
+			});
+			$('#allcheckedvalues').val(txt);
+		});
+	});
+	$(document).ready(function(){
+		$('.checkedvalue').unbind('click', function(){
+			var txt = $('#allcheckedvalues').val();
+			$('.checkedvalue:unchecked').each(function(){
+				txt -= $(this).val()
+			});
+			$('#allcheckedvalues').val(txt);
+		});
+	});
+	$(document).ready(function(){
+		$('.existingCategory').click(function(){
+			$('#newCategory').hide();
+		});
+	});
+	</script>
+{% endblock %}
