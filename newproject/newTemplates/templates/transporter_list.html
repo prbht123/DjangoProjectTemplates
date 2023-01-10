@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Transporter list</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/transporter_list.css' %}">
+	</head>
+	<body>
+		<div class="row d-flex justify-content-center align-items-center my-5">
+			<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 border border-warning">
+				<div class="row d-flex justify-content-center">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<img src="{% static 'image/transporter-6.jpeg' %}" class="h-75 w-100 p-3">
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 p-4">
+						<h4 class="fw-bold text-warning">Transporter company name</h4>
+						<h5 class="fw-bold">Owner</h5>
+						<h6 class="fw-bold">Anirban Chatterjee</h6>
+						<span class="text-warning"><i class="fa fa-star p-1"></i><i class="fa fa-star"></i><i class="fa fa-star p-1"></i><i class="fa fa-star"></i><i class="fa fa-star-o p-1"></i></span>
+						<a href="" class="btn btn-warning text-white fw-bold">4</a>
+						<h5 class="fw-bold">Contact no.</h5>
+						<h6 class="fw-bold">366667777</h6>
+						<h5 class="fw-bold text-warning">Address</h5>
+						<h6 class="fw-bold">D block, Abc Road, Kolkata-700001</h6>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 my-4 p-2">
+						<a href="" class="btn button btn-warning fw-bold text-white">Explore</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+	</body>
+</html>

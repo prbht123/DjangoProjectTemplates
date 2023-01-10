@@ -7,4 +7,4 @@ def service(request):
 
 def vehicleDetails(request):
 	context = {}
-	return render(request, 'vehicle_details.html', context)
+	return render(request, 'vehicle_details_1.html', context)
