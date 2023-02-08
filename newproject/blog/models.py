@@ -2,7 +2,7 @@ import uuid
 from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django_fsm import FSMIntegerField, transition
 from django.utils import timezone
 
@@ -10,7 +10,7 @@ from django.utils import timezone
 class CrudConstrained(models.Model):
 	date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
 	date_updated = models.DateTimeField(_("Date updated"), auto_now=True)
-	date_deleted = models.DateTimeField(_("Date deleted"), auto_now=True)
+	
 
 	class Meta:
 		abstract = True
@@ -81,7 +81,7 @@ class Tag(CrudConstrained):
 
 class PostManager(models.Manager):
 	def get_queryset(self):
-		return super().get_queryset().filter(status='2')
+		return super().get_queryset().filter(status='0')
 
 class Post(CrudConstrained):
 	SIMPLE = 0
@@ -117,6 +117,7 @@ class Post(CrudConstrained):
 	published_date = models.DateTimeField(blank=True, null=True)
 	post_type = FSMIntegerField(choices=POST_TYPE, default=HTML)
 	status = FSMIntegerField(choices=STATUS_CHOICES, default=STATUS_CREATED, protected=True)
+	
 
 	objects = PostManager()
 	
@@ -155,4 +156,27 @@ class Post(CrudConstrained):
 			self.slug = self._get_unique_slug()
 		super(Post, self).save(*args, **kwargs)
 
+class Likes(models.Model):
+	likes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='user_like', null=True, blank=True)
+	dislikes = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='user_dislike', null=True, blank=True)
+	post = models.OneToOneField(Post, on_delete=models.CASCADE, related_name='post_like')
+
+class Comment(CrudConstrained):
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='comment_user')
+	comment = models.TextField(null=True, blank=True)
+
+	def __str__(self):
+		return str(self.user)
+
+class PostComment(models.Model):	
+	post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comment_post')
+	post_comment = models.ManyToManyField(Comment, related_name='post_comment')
+
+	def __str__(self):
+		return str(self.post)
+
+class CommentLike(models.Model):
+	comment = models.OneToOneField(Comment, on_delete=models.CASCADE, related_name='comment_like')
+	like = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_comment')
+	dislike = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='dislike_comment')
 

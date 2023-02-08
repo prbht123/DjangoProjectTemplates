@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>List of stocks</title>
+{% endblock title %}
+{% block content %}
+<div class="row d-flex justify-content-center align-items-center my-5">
+	<h3 class="text-center fw-bold">Stock list</h3>
+	{% for st in stocks %}
+	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 bg-light p-5 shadow">
+		<img src="{% if st.image %}{{st.image.url}}{% endif %}" class="w-100">
+		<h4 class="fw-bold my-3">{{st.product}}</h4>
+		<h5 class="fw-bold my-3">{{st.company.name}}</h5>
+		<h6>Quantity:{{st.quantity}}</h6>
+		<div class="text-center mt-3">
+		<a href="{% url 'product:details_of_stock' pk=st.pk %}" class="btn btn-primary fw-bold">View details</a>
+		</div>
+	</div>
+		{% endfor %}
+	</div>
+{% endblock %}

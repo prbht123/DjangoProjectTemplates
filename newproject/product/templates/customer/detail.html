@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row d-flex justify-content-center align-items-center">
+	<div class="text-center">
+		<img src="{% if customer.image %}{{customer.image.url}}{% endif %}">
+		{{customer.name}}
+		{{customer.email}}
+		{{customer.contact_no}}
+		{{customer.gender}}
+		{{customer.address}}
+	</div>
+</div>
+{% endblock %}
