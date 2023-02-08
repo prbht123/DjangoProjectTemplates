@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Product list</title>
+{% endblock title %}
+{% block content %}
+<div class="row d-flex justify-content-center align-items-center my-5">
+	{% for product in product_list %}
+			   <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 bg-light p-5 me-4 shadow">
+				<img src="{% if product.image %}{{product.image.url}}{% endif %}" class="w-100 my-2">			
+				<h4 class="text-center fw-bold text-truncate">{{product.name}}</h4>
+				<h5 class="text-center fw-bold">&#8377;{{product.price}}</h5>	
+				<div class="text-center">					
+				<a href="{% url 'product:product_detail' pk=product.id %}" class="btn btn-primary fw-bold">View details</a>
+						</div>
+					</div>
+	{% endfor %}
+</div>
+{% endblock %}

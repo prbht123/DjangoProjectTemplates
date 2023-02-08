@@ -1,28 +1,127 @@
 {% extends 'base.html'%}
+{% block title %}
+<title>Detail post</title>
+{% endblock title %}
 {% load static %}
+{% block styles %}
+	<style>
+	</style>
+{% endblock styles %}
 {% block content %}
 	<div class="container">
-		<div class="row d-flex justify-content-center my-5">
-			<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 p-5">
-				<h3> Title :{{ post.title }}</h3>
-				<div class="row d-flex">
-					<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-						<img src="{% if post.featured_image %}{{post.featured_image.url}}{% endif %}" class="w-100">
+		<h3 class="fw-bold text-center mt-4">Post Details</h3>
+		<div class="row d-flex my-5">
+			<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 p-4">
+				<h2 class="fw-bold">{{ post.title }}</h2>
+				<h6 class="fw-bold">Published by {{post.author.username}} , on {{post.published_date}}</h6>
+				<h6 class="text-white fw-bold my-3"><span class="bg-secondary rounded p-1">{{post.post_category}}</span></h6>
+				<img src="{% if post.featured_image %}{{post.featured_image.url}}{% endif %}" class="w-100 img-thumbnail">
+				<p class="my-3 text-justify">{{post.content}}</p>
+				<h6 class="fw-bold">Tags:{% for tag in post.tags.all %}
+				{{tag.title}},{% endfor %}</h6>
+				<form action="{% url 'blog:post_likes' pk=post.id %}" method="POST">
+					{% csrf_token %}
+					{% if user in all_liked_user %}
+						<button type="submit" name="post_like" class="btn text-primary" id="like"><i class="fa fa-thumbs-up fa-2x"></i></button>
+					{% else %}
+						<button type="submit" name="post_like" class="btn" id="like"><i class="fa fa-thumbs-up fa-2x"></i></button>
+					{% endif %}
+					{% if user in all_disliked_user %}
+						<button type="submit" name="post_dislike" class="btn text-primary" id="dislike"><i class="fa fa-thumbs-down fa-2x"></i></button>
+					{% else %}
+						<button type="submit" name="post_dislike" class="btn" id="dislike"><i class="fa fa-thumbs-down fa-2x"></i></button>
+					{% endif%}
+				</form>
+				<h6>{{total_likes}} Likes {{total_dislikes}} Dislikes</h6>
+				<br>
+			</div>
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 p-5">
+				<form action="{% url 'blog:post_comment' pk=post.id %}" method="POST">
+					{% csrf_token %}
+					<input type="text" name="comment" placeholder="Comment here...">
+					<input type="submit" value="Post comment">
+				</form>
+				<br>
+				<div class="border border-light p-3">
+					<h5 class="fw-bold">Comments...</h5>
+					<h6>Total {{total_comments}} Comments</h6>
+					<br>
+					<a name="#comments5"></a>
+					<div id="comments5">
+						{% for comment in comments %}
+							{% if forloop.counter <= 5 %}
+								<h6>{{comment.user}}</h6>
+								<h6>{{comment.comment}}</h6>
+								<form action="{% url 'blog:comment_like' pk=comment.id %}" method="POST">
+									{% csrf_token %}
+									{% if user in comment_all_likes %}
+										<button type="submit" name="comment_like" class="btn text-primary" id="comment_like"><i class="fa fa-thumbs-up"></i></button>
+									{% else %}
+										<button type="submit" name="comment_like" class="btn" id="comment_like"><i class="fa fa-thumbs-up"></i></button>
+									{% endif %}
+									{% if user in comment_all_dislikes %}
+										<button type="submit" name="comment_dislike" class="btn text-primary" id="comment_dislike"><i class="fa fa-thumbs-down"></i></button>
+									{% else %}
+										<button type="submit" name="comment_dislike" class="btn" id="comment_dislike"><i class="fa fa-thumbs-down"></i></button>
+									{% endif %}
+								</form>
+								{{comment.like_comment}}
+								<p>{{total_comment_likes}} Likes {{total_comment_dislikes}} Dislikes</p>
+								<br>
+							{% endif %}
+						{% endfor %}
+					</div>
+					<a href="#scrollview" class="btn btn-secondary my-2" id="scroll_btn">See all comments</a>
+					<a name="#scrollview"></a>
+					<div class="scrollable" id="scrollable_view" style="display:none;">
+						<div class="p-3" style="width:400px; height:300px; overflow-y:scroll;">
+							{% for comment in comments %}
+								<h6>{{comment.user}}</h6>
+								<h6>{{comment.comment}}</h6>
+								<form action="{% url 'blog:comment_like' pk=comment.id %}" method="POST">
+									{% csrf_token %}
+									{% if user in comment_all_likes %}
+										<button type="submit" name="comment_like" class="btn text-primary" id="comment_like"><i class="fa fa-thumbs-up"></i></button>
+									{% else %}
+										<button type="submit" name="comment_like" class="btn" id="comment_like"><i class="fa fa-thumbs-up"></i></button>
+									{% endif %}
+									{% if user in comment_all_dislikes %}
+										<button type="submit" name="comment_dislike" class="btn text-primary" id="comment_dislike"><i class="fa fa-thumbs-down"></i></button>
+									{% else %}
+										<button type="submit" name="comment_dislike" class="btn" id="comment_dislike"><i class="fa fa-thumbs-down"></i></button>
+									{% endif %}
+								</form>
+								<p>{{total_comment_likes}} Likes {{total_comment_dislikes}} Dislikes</p>
+								<br>
+							{% endfor %}
+						</div>
+						<a href="#comments5" class="btn btn-secondary my-2" id="see_less">See less</a>
 					</div>
 				</div>
-				<h5>Author :{{post.author}}</h5>
-				<h6>Category:{{post.post_category}}</h6>
-				<h6>Tags:{% for tag in post.tags.all %}
-				{{tag.title}}{% endfor %}</h6>
-				<p>Content: {{post.content}}</p>
-				<h6>Status:{{post.status}}</h6>
-				<h6>Post type :{{post.post_type}}</h6>
 				<br>
+				
 				<a href="{% url 'blog:post_list' %}" class="btn btn-success my-3">Back</a>
-				<a href="{% url 'blog:post_update' pk=post.id %}" class="btn btn-primary my-3">Update</a> 
+				<a href="{% url 'blog:post_update' pk=post.id %}" class="btn btn-primary my-3">Update</a>
 				<a href="{% url 'blog:post_delete' pk=post.id %}" class="btn btn-danger my-3">Delete</a>
-
 			</div>
 		</div>
-	</div>
+		</div>		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('#like').click(function() {
+			$(this).css('color', 'blue')
+		});
+	});
+	document.getElementById('scroll_btn').addEventListener('click', (e)=>{
+		document.getElementById('scrollable_view').style.display = 'block';
+		document.getElementById('scroll_btn').style.display = 'none';
+		document.getElementById('comments5').style.display = 'none';
+	});
+	document.getElementById('see_less').addEventListener('click', (e)=>{
+		document.getElementById('scrollable_view').style.display = 'none';
+		document.getElementById('scroll_btn').style.display = 'block';
+		document.getElementById('comments5').style.display = 'block';
+	});
+	</script>
 {% endblock %}

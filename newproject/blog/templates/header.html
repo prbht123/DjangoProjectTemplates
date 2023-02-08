@@ -7,17 +7,34 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'blog:post_list' %}">Blog</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'product:product_list' %}">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'product:stock_list' %}">Stock</a>
+        </li>
         </ul>
+        <form class="d-flex" role="search" action="{% url 'product:search' %}">
+          <input class="form-control" type="search" name="search" placeholder="search" aria-label="search">
+          <button class="btn btn-outline-success me-2" type="submit">Search</button>
+        </form>
         {% if user.is_authenticated %}
-        {{user.username}}
-        <a href="{% url 'admin:logout' %}" class="btn btn-danger mx-2">Logout</a>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">{{user.username}}</a>
+          <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Complete profile</a></li>
+      <li><a class="dropdown-item" href="{% url 'product:customer_detail'%}">View profile</a></li>
+    </ul>
+        </div> 
+        <a href="{% url 'product:cart' %}" class="nav-link p-1">Cart</a>       
+        <a href="{% url 'account:logout' %}" class="btn btn-danger mx-2">Logout</a>
         {% else %}
-      <a href="" class="btn btn-outline-success">Login</a>
+      <a href="{% url 'account:login' %}" class="btn btn-outline-success">Login</a>
       {% endif %}
     </div>
   </div>

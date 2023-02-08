@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row d-flex justify-content-center align-items-center my-5">
+	<div class="text-center">
+		{% if products %}
+{% for product in products %}
+<a href="{% url 'product:product_detail' pk=product.id %}">{{product}}</a>~product
+<br>
+<br>
+{% endfor %}
+{% elif posts %}
+{% for post in posts %}
+<a href="{% url 'blog:post_detail' pk=post.id %}">{{post}}</a>~blog
+<br>
+<br>
+{% endfor %}
+{% else %}
+<p class="text-center">No result found..</p>
+{% endif %}
+</div>
+</div>
+{% endblock %}

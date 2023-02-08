@@ -17,12 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name='home.html')),
     path('template/', include('templateApp.urls', namespace='templateApp')),
     path('new_templates/', include('newTemplates.urls', namespace='newTemplates')),
     path('blog/', include('blog.urls', namespace='blog')),
+    path('account/', include('account.urls', namespace='account')),
+    path('product/', include('product.urls', namespace='product')),
     path('ckeditor_uploader/', include('modules.contrib.ckeditor_uploader.urls')),
 ]
 if settings.DEBUG:
